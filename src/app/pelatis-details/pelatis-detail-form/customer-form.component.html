@@ -1,4 +1,107 @@
-<div class="">
-Otinanai
+<form #form="ngForm"
+(submit)="onSubmit(form)"
+[class.submitted]="service.formSubmitted" novalidate autocomplete="off">
+
+<input type="hidden" name="id" [value]="service.formData.id">
+
+<div class="mb-3">
+  <label for="firstName">First Name</label>
+  <input class="form-control form-control-lg"
+  placeholder="type first name"
+  #firstName="ngModel"
+  name="firstName"
+  [(ngModel)]="service.formData.firstName"
+  required minlength="3" maxlength="20">
 </div>
 
+<div class="mb-3">
+  <label for="lastName">Last Name</label>
+  <input class="form-control form-control-lg"
+  placeholder="type last name"
+  #lastName="ngModel"
+  name="lastName"
+  [(ngModel)]="service.formData.lastName"
+  required minlength="3" maxlength="20">
+</div>
+
+<div class="mb-3">
+  <label for="email">eMail</label>
+  <input class="form-control form-control-lg"
+  placeholder="type an email"
+  type="email"
+  #email="ngModel"
+  name="email"
+  [(ngModel)]="service.formData.email"
+  required minlength="3">
+</div>
+
+<div class="mb-3">
+  <label for="address">Address</label>
+  <input class="form-control form-control-lg"
+  placeholder="type an address"
+  #address="ngModel"
+  name="address"
+  [(ngModel)]="service.formData.address">
+</div>
+
+<div class="mb-3 border border-gray">
+</div>
+
+<div class="mb-3">
+  <label>Telephones</label>
+  <div class="row d-flex align-items-center">
+    <div class="col-md-1">
+      <span class="text-secondary">
+        <i class="fa-regular fa-phone"></i>
+      </span>
+    </div>
+    <div class="col-md-11">
+      <input class="form-control form-control-lg"
+      type="tel"
+        #telephones.house="ngModel"
+        name="house"
+        [(ngModel)]="service.formData.telephones.house">
+    </div>
+  </div>
+  <br/>
+
+  <div class="row d-flex align-items-center">
+    <div class="col-md-1">
+      <span class="text-secondary">
+        <i class="fa-regular fa-mobile"></i>
+      </span>
+    </div>
+    <div class="col-md-11">
+      <input class="form-control form-control-lg"
+        type="tel"
+        #telephones.mobile="ngModel"
+        name="mobile"
+        [(ngModel)]="service.formData.telephones.mobile">
+    </div>
+  </div>
+  <br/>
+
+  <div class="row d-flex align-items-center">
+    <div class="col-md-1">
+      <span class="text-secondary">
+        <i class="fa-regular fa-city"></i>
+      </span>
+    </div>
+    <div class="col-md-11">
+      <input class="form-control form-control-lg"
+        type="tel"
+        #telephones.work="ngModel"
+        name="work"
+        [(ngModel)]="service.formData.telephones.work">
+    </div>
+  </div>
+  <br/>
+</div>
+
+<div class="d-grid">
+  <button class="btn btn-lg btn-success" type="submit">
+    Submit
+  </button>
+</div>
+
+</form>

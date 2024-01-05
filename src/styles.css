@@ -1,3 +1,18 @@
 .mouse-hover{
   cursor:pointer;
 }
+ form label{
+  text-transform: uppercase;
+  color:gray;
+ }
+ form input{
+  font-weight: 400;
+ }
+ form input::placeholder{
+  color:rgb(242, 242, 242);
+  font-weight: 200;
+  font-size: medium;
+ }
+form.submitted input.ng-invalid{
+  border-color: red;
+}

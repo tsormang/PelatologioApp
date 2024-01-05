@@ -7,7 +7,6 @@ export class Customer {
     address: string=""
     email: string=""
     telephones: Telephone = new Telephone();
-    response: string=""
 }
 
 
